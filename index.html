@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KO</title>
+        <script src="js/jquery.js"></script>
+        <script src="js/knockout.debug.js"></script>
+    </head>
+    <body>
+        The name is <span id="person" data-bind="text: personName"></span>
+        <script>
+            //Custom KO
+            var vm = {
+                personName: ko.observable('Bob'),
+                personAge: ko.observable(123)
+            };
+
+            ko.applyBindings(vm, $("#person")[0]);
+
+            setTimeout(function() {
+                vm.personName("Naya naam aagaya");
+            }, 2000);
+        </script>
+    </body>
+</html>
